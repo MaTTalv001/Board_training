@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :boards, only: %i[index new create destroy]
+  resources :boards, only: %i[index new create destroy show edit]
 end

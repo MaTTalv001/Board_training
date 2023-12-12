@@ -23,6 +23,7 @@ class BoardsController < ApplicationController
   end
 
    def destroy
+    @board = Board.find(params[:id])
     @board.destroy!
     redirect_to boards_path, status: :see_other, success: t('defaults.message.deleted', item: Board.model_name.human)
   end
