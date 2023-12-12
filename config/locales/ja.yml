@@ -1,0 +1,30 @@
+ja:
+  boards:
+    edit:
+      title: "掲示板編集"
+    bookmarks:
+      title: "ブックマーク一覧"
+      no_result: "ブックマーク中の掲示板がありません。"
+    index:
+      title: "掲示板一覧"
+      no_result: "掲示板がありません"
+    new:
+      title: "掲示板作成"
+    show:
+      title: "掲示板詳細"
+  board:
+    show:
+      title: "掲示板詳細"
+  defaults:
+    message:
+      not_created: "掲示板を作成出来ませんでした"
+      not_updated: "掲示板を更新出来ませんでした"
+      created: "掲示板を作成しました"
+      updated: "掲示板を更新しました"
+      deleted: "掲示板を削除しました"
+      not_authorized: "権限がありません"
+    edit: "編集"
+    show: "詳細"
+    delete: "削除"
+    delete_confirm: "削除しますか？"
+    search_word: "検索ワード"

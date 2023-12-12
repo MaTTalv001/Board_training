@@ -1,0 +1,40 @@
+<div class="container-fluid mt-3">
+<div class="row">
+  <div class="container-sm">
+
+    <%= form_with model: @board, local: true do |form| %>
+    <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control", id: "BoardTitle" %>
+    </div>
+
+    <div class="mb-3">
+    <%= form.label :body, "Board Body", class: "form-label" %>
+    <%= form.text_area :body, class: "form-control", id: "FormControlTextarea", rows: 3 %>
+    </div>
+
+    <!--
+    <div class="mb-3 form-check">
+    <%= form.check_box :eastern_mode, class: "form-check-input", id: "Check" %>
+    <%= form.label :eastern_mode, "Eastern Mode", class: "form-check-label" %>
+    </div>
+    -->
+
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  
+  </div>
+    <div class="container mt-5">
+      <div class="row row-cols-2">
+        <!-- boardsが存在する場合 -->
+        <% if @boards.present? %>
+        <!-- パーシャルファイルで別途作成 -->
+        <!-- @boards変数に含まれる各要素をパーシャルに渡す -->
+        <%= render partial: "board", collection: @boards %>
+        <% else %>
+        <!-- 掲示板が存在しない場合にメッセージを表示する -->
+        <% end %>
+      </div>
+    </div>
+</div>
+</div>
