@@ -4,6 +4,14 @@ class BoardsController < ApplicationController
   end
   
   def index
+    current_date = Date.today
+    formatted_date = current_date.strftime('%m月%d日')
+    begin
+
+      @chatgpt = ChatgptService.call("簡単に挨拶してください。その際、#{formatted_date}が誕生日の有名人を簡単に紹介してください。")
+    rescue Net::ReadTimeout
+      @chatgpt = "ようこそ！今日は#{formatted_date}です。"
+    end
     @boards = Board.all.order(created_at: :desc)
     @board = Board.new 
   end

@@ -21,14 +21,14 @@ class ChatgptService
       model:,
       messages: [{ role: 'user', content: message }]
     }
-    response = HTTParty.post(api_url, body: body.to_json, headers: options[:headers], timeout: 10)
+    response = HTTParty.post(api_url, body: body.to_json, headers: options[:headers], timeout: 100)
     raise response['error']['message'] unless response.code == 200
 
     response['choices'][0]['message']['content']
   end
 
   class << self
-    def call(message, model = 'gpt-3.5-turbo')
+    def call(message, model = 'gpt-4')
       new(message, model).call
     end
   end

@@ -1,5 +1,11 @@
 <div class="container-fluid mt-3">
-<div class="row">
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-text">
+    <%= @chatgpt %>
+  </span>
+</nav>
+
+<div class="row mt-3">
   <div class="container-sm">
 
     <%= form_with model: @board, local: true do |form| %>
