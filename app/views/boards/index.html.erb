@@ -1,13 +1,13 @@
 <div class="container-fluid mt-3">
+<!--
 <nav class="navbar navbar-light bg-light">
   <span class="navbar-text">
     <%= @chatgpt %>
   </span>
 </nav>
-
+-->
 <div class="row mt-3">
   <div class="container-sm">
-
     <%= form_with model: @board, local: true do |form| %>
     <div class="mb-3">
     <%= form.label :title, class: "form-label" %>
@@ -15,16 +15,14 @@
     </div>
 
     <div class="mb-3">
-    <%= form.label :body, "Board Body", class: "form-label" %>
+    <%= form.label :body, "Body", class: "form-label" %>
     <%= form.text_area :body, class: "form-control", id: "FormControlTextarea", rows: 3 %>
     </div>
 
-<!--
     <div class="mb-3 form-check">
-    <%= form.check_box :eastern_mode, class: "form-check-input", id: "Check" %>
-    <%= form.label :eastern_mode, "Eastern Mode", class: "form-check-label" %>
+    <%= form.check_box :western_mode, class: "form-check-input", id: "Check" %>
+    <%= form.label :western_mode, "Western Mode", class: "form-check-label" %>
     </div>
--->
 
     <%= form.submit "Submit", class: "btn btn-primary" %>
     <% end %>
